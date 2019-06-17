@@ -23,6 +23,15 @@ class UserController < ApplicationController
     end
   end
 
+  def destroy
+    User.find(params[:id]).destroy
+    render plain: "be gone thot"
+  end
+
+  def nest
+    render json: params['some_category']['a_second_key']
+  end
+
   private
 
   # def validate_name(name)

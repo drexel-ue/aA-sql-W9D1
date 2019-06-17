@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get "/users/:id", to:"user#show"
   post "/users", to: "user#create"
   patch "/users/:id", to: "user#update"
+  delete "/users/:id", to: "user#destroy"
+  post "/users/nest_test", to: "user#nest"
 end
