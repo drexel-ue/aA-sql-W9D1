@@ -1198,3 +1198,17 @@ Migrating to AddEmailColumn (20190617223806)
   ↳ /Users/ikeshpack/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/subscriber.rb:101
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
   ↳ /Users/ikeshpack/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/subscriber.rb:101
+Started POST "/users" for ::1 at 2019-06-17 18:51:17 -0400
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ikeshpack/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/subscriber.rb:101
+Processing by UserController#create as */*
+  Parameters: {"name"=>"little bobby tables", "email"=>"drop_database@jk.com", "user"=>{"name"=>"little bobby tables", "email"=>"drop_database@jk.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/ikeshpack/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/subscriber.rb:101
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "little bobby tables"], ["email", "drop_database@jk.com"], ["created_at", "2019-06-17 22:51:17.546564"], ["updated_at", "2019-06-17 22:51:17.546564"]]
+  ↳ /Users/ikeshpack/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/subscriber.rb:101
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/ikeshpack/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/subscriber.rb:101
+Completed 200 OK in 18ms (Views: 1.0ms | ActiveRecord: 15.3ms)
+
+

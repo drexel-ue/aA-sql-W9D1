@@ -10,7 +10,7 @@ class UserController < ApplicationController
   end
 
   def create 
-    user = User.create(name:params['name'])
+    user = User.create(name:params['name'], email:params['email'])
     render plain: "created user: #{user.name} with id: #{user.id}", json: user
   end
 
