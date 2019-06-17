@@ -1,3 +1,5 @@
 class User < ApplicationRecord
- bund
+    validates :name, presence: true
+    
+    
 end
