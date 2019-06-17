@@ -29,7 +29,7 @@ class UserController < ApplicationController
   end
 
   def nest
-    render json: params['some_category']['a_second_key']
+    render json: params['some_category']['inner_inner_hash']
   end
 
   private
