@@ -9,4 +9,14 @@ class UserController < ApplicationController
      render json: user
   end
 
+  def create 
+    user = User.create(name:params['name'])
+    render plain: "created user: #{user.name} with id: #{user.id}", json: user
+  end
+
+  private
+
+  # def user_params
+  #   User.new(params.require(:user), permit(:name))
+  # end
 end

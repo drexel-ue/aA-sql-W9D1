@@ -394,3 +394,63 @@ Processing by UserController#show as */*
 Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.6ms)
 
 
+Started POST "/users" for ::1 at 2019-06-17 17:46:51 -0400
+Processing by UserController#create as */*
+  Parameters: {"name"=>"mikey", "user"=>{"name"=>"mikey"}}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 8.3ms)
+
+
+
+ActiveModel::ForbiddenAttributesError - ActiveModel::ForbiddenAttributesError:
+  app/controllers/user_controller.rb:13:in `create'
+
+Started POST "/users" for ::1 at 2019-06-17 18:02:15 -0400
+Processing by UserController#create as */*
+  Parameters: {"name"=>"mikey", "user"=>{"name"=>"mikey"}}
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 7.9ms)
+
+
+
+NoMethodError - undefined method `permit' for #<UserController:0x00007fc84a423050>
+Did you mean?  print:
+  app/controllers/user_controller.rb:20:in `user_params'
+  app/controllers/user_controller.rb:13:in `create'
+
+Started POST "/users" for ::1 at 2019-06-17 18:02:32 -0400
+Processing by UserController#create as */*
+  Parameters: {"name"=>"mikey", "user"=>{"name"=>"mikey"}}
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `permit' for #<UserController:0x00007fc84ad58c60>
+Did you mean?  print:
+  app/controllers/user_controller.rb:20:in `user_params'
+  app/controllers/user_controller.rb:13:in `create'
+
+Started POST "/users" for ::1 at 2019-06-17 18:03:10 -0400
+Processing by UserController#create as */*
+  Parameters: {"name"=>"mikey", "user"=>{"name"=>"mikey"}}
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/users" for ::1 at 2019-06-17 18:03:31 -0400
+Processing by UserController#create as */*
+  Parameters: {"name"=>"mikey", "user"=>{"name"=>"mikey"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/ikeshpack/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/subscriber.rb:101
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "mikey"], ["created_at", "2019-06-17 22:03:31.563104"], ["updated_at", "2019-06-17 22:03:31.563104"]]
+  ↳ /Users/ikeshpack/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/subscriber.rb:101
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/ikeshpack/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/subscriber.rb:101
+Completed 200 OK in 16ms (Views: 0.7ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/users/11" for ::1 at 2019-06-17 18:03:40 -0400
+Processing by UserController#show as */*
+  Parameters: {"name"=>"mikey", "id"=>"11", "user"=>{"name"=>"mikey"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /Users/ikeshpack/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/subscriber.rb:101
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+
+
